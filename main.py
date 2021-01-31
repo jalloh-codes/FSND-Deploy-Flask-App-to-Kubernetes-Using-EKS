@@ -80,7 +80,7 @@ def auth():
 
     user_data = body
 
-    return jsonify(token=_get_jwt(user_data)) #.decode('utf-8')
+    return jsonify(token=_get_jwt(user_data)) #
 
 
 @APP.route('/contents', methods=['GET'])
@@ -114,5 +114,5 @@ def _get_jwt(user_data):
 if __name__ == '__main__':
     # APP.run(host='localhost', port=8080, debug=True)
    
-    port = int(os.environ.get('PORT', 5050))
+    port = int(os.environ.get('PORT', 8080))
     APP.run(host='0.0.0.0', port=port, debug=True)
